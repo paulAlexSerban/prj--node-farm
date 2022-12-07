@@ -8,7 +8,8 @@
     "lint": "echo 'INFO: no lint scripts configured'",
     "install:ci": "npm ci --omit=dev --ignore-scripts",
     "install:root": "npm install",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "formats:check": "npx prettier --check '**/*.js'"
   },
   "author": "",
   "license": "ISC",
