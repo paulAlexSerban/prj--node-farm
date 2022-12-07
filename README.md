@@ -1,10 +1,6 @@
-# NodeJS-Basic-Vanilla-Server
+# Node farm
 
-## Deploy to AWS
-- make sure you have or create a AWS VPC
-- install AWS CLS and configure it with your AWS credentials
-- add the required data in `.env.dev`
-- if you have previously deployed to AWS ECR - re-tag the image
-  - run `bash scripts/ecr-node_farm-remove-latest-tag.bash`
-- deploy your current/latest image to AWS ECR
-  - RUN `bash scripts/ecr-node_farm-deploy.bash` to deploy your current image
+## Commands
+
+- START NODE FARM NodeJS - `bash scripts/backend/node_farm/start.bash`
+- START LOCAL DOCKER - `bash scripts/docker/node_farm/compose-build.bash`

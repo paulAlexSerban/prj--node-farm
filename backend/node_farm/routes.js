@@ -40,6 +40,20 @@ const requestHandler = (req, res) => {
       });
     });
   }
+
+  if(url === "/") {
+    res.write(`
+    <html>
+      <head>
+        <title>Node Farm</title>
+      </head>
+      <body>
+        <h1>Node Farm</h1>
+      </body>
+    </html>
+  `);
+    return res.end();
+  }
 };
 
 module.exports = requestHandler;
