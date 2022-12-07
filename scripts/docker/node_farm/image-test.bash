@@ -3,5 +3,5 @@
 cd "$(dirname "$0")" || exit
 
 echo "🧪 TEST DOCKER 🐳  NodeJS Service Container"
-bash ../../../docker/test/check-docker-container.bash nodejs_service
+bash ../../../docker/test/check-docker-container.bash node_farm
 docker ps

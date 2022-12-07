@@ -2,7 +2,7 @@
 # makes sure the folder containing the script will be the root folder
 cd "$(dirname "$0")" || exit
 
-echo "🟢  START 🐳  NodeJS Service conatiner "
+echo " 🛑  🐳  STOP NodeJS containers"
 docker compose --env-file ../../../.env.config \
-  --file ../../../docker/nodejs_service.dev.docker-compose.yaml up --detach --build
-bash compose-test.bash
+  --file ../../../docker/node_farm.dev.docker-compose.yaml \
+  down --volumes --rmi all
