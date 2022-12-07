@@ -3,5 +3,5 @@
 cd "$(dirname "$0")" || exit
 
 echo "🟢 STOP DOCKER 🐳  NodeJS Service Container"
-docker stop nodejs_service
+docker stop node_farm
 docker ps

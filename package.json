@@ -1,6 +1,6 @@
 {
-  "name": "tpl--nodejs-service",
-  "version": "1.2.0",
+  "name": "tpl--node-farm",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
