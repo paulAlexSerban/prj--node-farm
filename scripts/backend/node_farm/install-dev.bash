@@ -6,4 +6,4 @@ echo "🛑  Cleaning Backend - Node Farm node_modules"
 rm -rfv ../../../backend/node_farm/node_modules
 
 echo "🔧  DEV Install Backend - Node Farm"
-npm --prefix ../../../backend/node_farm install
+npm --prefix ../../../backend/node_farm install --verbose
