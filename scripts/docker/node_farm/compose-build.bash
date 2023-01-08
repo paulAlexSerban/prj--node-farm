@@ -3,6 +3,6 @@
 cd "$(dirname "$0")" || exit
 
 echo "🟢  START 🐳  NodeJS Service conatiner "
-docker compose --env-file ../../../.env.config \
+docker compose --env-file ../../../.env \
   --file ../../../docker/node_farm.dev.docker-compose.yaml up --detach --build
 bash compose-test.bash
