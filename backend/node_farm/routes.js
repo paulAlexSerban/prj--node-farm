@@ -6,53 +6,22 @@ const requestHandler = (req, res) => {
 
   res.setHeader("Content-Type", "text/html");
 
-  if (url === "/submit-message") {
+  if (url === "/" || url === "/overview") {
     res.write(`
-    <html>
-      <head>
-        <title>Enter message:</title>
-      </head>
-      <body>
-        <form action="/message" method="POST">
-          <input type="text" name="message">
-          <button type="submit">Submit</button>
-        </form>
-      </body>
-    </html>
+      This is the overview page.
   `);
     return res.end();
-  }
-
-  if (url === "/message" && method === "POST") {
-    const body = [];
-
-    req.on("data", (chunk) => {
-      body.push(chunk);
-    });
-
-    return req.on("end", () => {
-      const parsedBody = Buffer.concat(body).toString();
-      const message = parsedBody.split("=")[1];
-      fs.writeFile(`message-${Date.now()}.txt`, message, (error) => {
-        res.statusCode = 302;
-        res.setHeader("Location", "/submit-message");
-        return res.end();
-      });
-    });
-  }
-
-  if(url === "/") {
+  } else if (url === "/product") {
     res.write(`
-    <html>
-      <head>
-        <title>Node Farm</title>
-      </head>
-      <body>
-        <h1>Node Farm</h1>
-      </body>
-    </html>
+      The is the overview page.
   `);
     return res.end();
+  } else {
+    res.writeHead(404, {
+      "Content-Type": "text/html",
+      "my-own-header": "hello world",
+    });
+    res.end("Page not found");
   }
 };
 
