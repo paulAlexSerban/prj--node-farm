@@ -14,7 +14,7 @@ echo "Login Docker to AWS ECR"
 docker login -u AWS -p $(aws ecr get-login-password --region $AWS_REGION) $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
 echo "Build Docker for AWS ECR repository"
-docker build --file ../../backend/nodejs_service/nodejs_service.Dockerfile ../../backend/nodejs_service -t $ECR_REPO_NAME:\latest --build-arg NODE_ENV=production
+docker build --file ../../backend/node_farm/node_farm.Dockerfile ../../backend/node_farm -t $ECR_REPO_NAME:\latest --build-arg NODE_ENV=production
 
 echo "Tag Latest Dcoker container"
 docker tag $ECR_REPO_NAME:\latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO_NAME:\latest
