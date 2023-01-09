@@ -7,7 +7,7 @@
     "test": "echo 'INFO: no test scripts configured'",
     "lint": "echo 'INFO: no lint scripts configured'",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon --inspect app.js"
   },
   "author": "",
   "license": "ISC"
